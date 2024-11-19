@@ -46,3 +46,12 @@ Current design implentation for auth lacked user session limits, this is require
 1. Add expiry to jwt sessions, currently set to 1m for testing.
 
 2. Handle token expiry error in auth middleware. 
+
+## Changes made
+
+1. Updated db connection string, ones provided couldn't connect.
+
+2. Updated mongoose package and connection method to match db version.
+
+3. These changes, can be found in this PR [https://github.com/enero-o/montgo-auth-fix/pull/1]
+
