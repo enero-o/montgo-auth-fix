@@ -13,7 +13,20 @@ const authMiddleware = (req, res, next) => {
 
         next();
     } catch (error) {
-        return res.status(401).json({ error: 'unauthorize user' });
+        let errorMessage;
+
+        switch(error.name){
+            case 'TokenExpiredError':
+                errorMessage = 'auth expired';
+                break;
+            case 'JsonWebTokenError':
+                errorMessage = 'invalid auth';
+                break;
+            default:
+                errorMessage = 'unauthorize user';
+        }
+       
+        return res.status(401).json({ error: errorMessage });
     }
 }
 
