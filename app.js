@@ -19,11 +19,10 @@ app.get('/', (req, res) => {
 });
 
 //Connection with DB
-const MONGODB_URI = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.qzgcd.mongodb.net/${process.env.DB_DATABASE}?retryWrites=true&w=majority`;
+const MONGODB_URI = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@storejars-staging.c39jbqb.mongodb.net/${process.env.DB_DATABASE}?retryWrites=true&w=majority`;
 mongoose.connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useFindAndModify: false
 })
     .then((res) => {
         console.log("Connected with MongoDB ");
