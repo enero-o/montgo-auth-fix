@@ -38,3 +38,11 @@ As a job candidate, your task is to enhance the Auth Service by adding a feature
 Good luck with your interview! If you have any questions, don't hesitate to reach out.
 
 Happy coding!
+
+## Solution note
+
+Current design implentation for auth lacked user session limits, this is required to implement a user signed in session. Step taken to implement this as follows
+
+1. Add expiry to jwt sessions, currently set to 1m for testing.
+
+2. Handle token expiry error in auth middleware. 
